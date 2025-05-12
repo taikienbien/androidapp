@@ -1,0 +1,11 @@
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    command: tunnel --no-autoupdate run --token eyJhIjoiZTIxMGVjMGE0MGZjZjY4ZDUxZDNhYTYyYmQ0ZGVkNzAiLCJ0IjoiYzgxYjJkNzAtNzMwZS00YTRjLWE2ZTAtODhkM2M1NmNiNjY5IiwicyI6Ik0yTmhORGs0TURRdE5UbGlNaTAwT1RsaUxXRTBNak10WlRRMFpXRmtNbU0wWXpGbSJ9
+    restart: always
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./cloudflared:/etc/cloudflared
