@@ -1,0 +1,15 @@
+services:
+
+  filebrowser:
+    image: filebrowser/filebrowser:s6
+    container_name: filebrowser
+    volumes:
+      - /path/to/root:/srv
+      - /path/to/filebrowser.db:/database/filebrowser.db
+      - /path/to/settings.json:/config/settings.json
+    environment:
+      - PUID=$(id -u)
+      - PGID=$(id -g)
+    ports:
+      - 8080:80
+    restart: unless-stopped
