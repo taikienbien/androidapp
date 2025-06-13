@@ -23,7 +23,7 @@
 - Patch Flutter 
 - Run `screenshot.sh`
 - Screenshots will be saved in `/screenshots/`
-
+- Update content
 ## License
 - MIT License
 
